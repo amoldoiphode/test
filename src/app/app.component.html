@@ -1,0 +1,57 @@
+<h3>ng-template ngSwitch with div</h3>
+<div [ngSwitch]="'javascript'">
+    <p *ngSwitchCase="'Angular'">Angular</p>
+    <p *ngSwitchCase="'Javascript'">Javascript</p>
+    <p *ngSwitchCase="'React'">React</p>
+    <p *ngSwitchDefault="">Typescript</p>
+</div>
+
+<h3>Ng-template ngSwitch with Template</h3>
+<div [ngSwitch]="'Typescript'">
+    <ng-template [ngSwitchCase]="'Angular'"><p>Angular</p></ng-template>
+     <ng-template [ngSwitchCase]="'Javascript'"><p>Javascript</p></ng-template>
+    <ng-template [ngSwitchCase]="'React'"><p>React</p></ng-template>
+    <ng-template [ngSwitchCase]= ""><p>Typescript</p></ng-template>
+</div>
+
+<ng-container>
+    hello! ng container example simple
+</ng-container>
+
+<table>
+    <tbody>
+        <ng-container *ngFor="let book of books">
+            <tr ngIf="book.id>1">
+                <td>{{book.name}}</td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>
+
+<!-- <div *ngIf="display">
+    <div *ngFor="let book of books">
+        {{book.name}}
+    </div>
+</div> -->
+
+<!-- <ng-container *ngIf="display">
+    <div *ngFor="let book of books">
+        {{book.name}}
+    </div>
+</ng-container> -->
+
+<!-- <div><span *ngIf="error">opps</span>{{msg}}</div> -->
+
+<ng-container *[ngTemplateOutlet]="template"></ng-container>
+
+
+<ng-container *ngTemplateOutlet="template; context:obj">
+</ng-container>
+
+<ng-template #template let-obj="data">
+    {{obj}}
+</ng-template>
+
+<button>Start Animation</button>
+<div style="border: 1px solid blue; border-radius: 3px; color: aqua;background: #555;
+height: 105px;width: 260px; position: relative; margin-top: 10px;">Jquery</div>
